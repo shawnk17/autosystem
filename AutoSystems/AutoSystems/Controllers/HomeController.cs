@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AutoSystems.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AutoSystems.Controllers
 {
@@ -22,6 +23,7 @@ namespace AutoSystems.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
