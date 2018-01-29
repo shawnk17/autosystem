@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using AutoSystems.Data;
 using AutoSystems.Models;
 using AutoSystems.Services;
+using ApplicationCore.Entities;
+using ApplicationCore.Interfaces;
+using Infrastructure;
 
 namespace AutoSystems
 {
