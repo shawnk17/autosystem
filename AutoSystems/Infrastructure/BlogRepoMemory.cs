@@ -8,74 +8,54 @@ namespace Infrastructure
 {
     public class BlogRepoMemory : IBlogPostsRepo
     {
-        private static List<BlogPost> _BlogPost;
+        private static List<BlogPost> _blogPost;
         private static int _nextId = 1;
-        private int id;
-
+        
         public BlogRepoMemory()
         {
-            if (_BlogPost == null)
+            if (_blogPost == null)
             {
-                _BlogPost = new List<BlogPost>();
+                _blogPost = new List<BlogPost>();
             }
         }
 
         public void Add(BlogPost newBlogPost)
         {
             newBlogPost.Id = _nextId++;
-            _BlogPost.Add(newBlogPost);
+            _blogPost.Add(newBlogPost);
         }
 
-        public void Delete(BlogPost newpostDelete)
+        public void Delete(BlogPost newPostDelete)
         {
-            var origBlogPost = GetById(newpostDelete.Id);
+            var origBlogPost = GetById(newPostDelete.Id);
 
-            _BlogPost.Remove(origBlogPost);
+            _blogPost.Remove(origBlogPost);
         }
 
         public void Edit(BlogPost newpost)
         {
-            var origTelegram = GetById(newpost.Id);
+            var newBlogPost = GetById(newpost.Id);
 
-            origBlogPost.Content = newpost.Content;
-            origBlogPost.Receiver = newpost.Receiver;
-            origBlogPost.Sender = newpost.Sender;
-            origBlogPost.Title = newpost.Title;
+            newBlogPost.Permalink = newpost.Permalink;
+            newBlogPost.PhotoUrl = newpost.PhotoUrl;
+            newBlogPost.PostContent = newpost.PostContent;
+            newBlogPost.Title = newpost.Title;
+            newBlogPost.Author = newpost.Author;
+        }
+
+        public BlogPost GetById(int id)
+        {
+            return _blogPost.Find(t => t.Id == id);
         }
 
         public BlogPost GetPostByPermalink(string permalink)
         {
-            return _BlogPost.Find(t => t.Id == id);
+            return _blogPost.Find(t => t.Permalink == permalink);
         }
 
         public List<BlogPost> ListAll()
         {
-            return _BlogPost;
+            return _blogPost;
         }
-
-        //public void Add(BlogPost newpost)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void Delete(BlogPost newpost)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void Edit(BlogPost newpost)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public BlogPost GetPostByPermalink(string permalink)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public List<BlogPost> ListAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -13,5 +13,6 @@ namespace ApplicationCore.Interfaces
         void Add(BlogPost newpost);
         void Edit(BlogPost newpost);
         void Delete(BlogPost newpost);
+        BlogPost GetById(int id);
     }
 }
