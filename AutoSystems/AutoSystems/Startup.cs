@@ -45,7 +45,7 @@ namespace AutoSystems
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddScoped<ITelegramRepository, TelegramRepositoryFs>();
-
+            services.AddScoped<IBlogPostsRepo, BlogRepoFs>();
             services.AddMvc();
         }
 
