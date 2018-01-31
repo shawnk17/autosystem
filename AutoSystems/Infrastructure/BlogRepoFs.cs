@@ -113,5 +113,10 @@ namespace Infrastructure
                 
             }
         }
+
+        public void Details(BlogPost newpost)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

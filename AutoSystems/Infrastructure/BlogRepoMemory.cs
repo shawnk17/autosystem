@@ -32,6 +32,11 @@ namespace Infrastructure
             _blogPost.Remove(origBlogPost);
         }
 
+        public void Details(BlogPost newpost)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Edit(BlogPost newpost)
         {
             var newBlogPost = GetById(newpost.Id);
