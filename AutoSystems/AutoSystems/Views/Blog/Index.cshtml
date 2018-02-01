@@ -59,6 +59,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PhotoUrl)
+                <img src="@item.PhotoUrl" class="img-responsive" />
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |

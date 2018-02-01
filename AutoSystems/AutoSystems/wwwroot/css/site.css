@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -32,4 +34,122 @@
     .carousel-caption {
         display: none;
     }
+}
+
+
+body {
+    font-size: 100%;
+    padding: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(22, 126, 223);
+}
+
+    ul.topnav li {
+        float: left;
+    }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            ul.topnav li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            ul.topnav li a.active {
+                background-color: #4CAF50;
+            }
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}
+
+main {
+    background-color: rgba(173, 217, 230, 0.911);
+}
+
+aside {
+    background-color: lightyellow;
+    align-self: auto;
+    height: 14%;
+    width: 14%;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+figure {
+    border: .25rem solid rgb(238, 84, 84);
+}
+
+figcaption {
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+}
+
+#side {
+    padding: 3%;
+}
+
+@media(print) {
+    * {
+        background-color: white;
+        color: black;
+    }
+}
+
+@media(min-width: 450px) {
+    #main-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main {
+        flex: 4;
+    }
+
+    aside {
+        flex: 1;
+    }
+
+    figure {
+        border: 1.2rem solid rgb(238, 84, 84);
+        width: 50%;
+        float: right;
+    }
+}
+
+#main-content {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-self: auto;
+    border: 3px solid rgba(0, 0, 0, 0.445);
+}
+
+footer {
+    clear: both;
+    background-color: palegoldenrod;
 }
