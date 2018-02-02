@@ -49,7 +49,7 @@ namespace AutoSystems.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // TODO Log the error
                 //return View(newTelegram);
